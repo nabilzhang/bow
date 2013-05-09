@@ -21,6 +21,16 @@
 	</context:component-scan>
 	<!-- Enables the Spring MVC @Controller programming model -->
 	<mvc:annotation-driven />
+	
+	<mvc:interceptors>
+		<mvc:interceptor>
+			<mvc:mapping path="/home/**"  />
+			<mvc:mapping path="/user/**"  />
+			
+			<bean class="me.nabil.app.bow.interceptors.AuthInterceptor" />
+		</mvc:interceptor>
+	</mvc:interceptors>
+	
 	<mvc:default-servlet-handler />
 	<mvc:resources mapping="/images/**" location="/WEB-INF/views/images/" />
 	<mvc:resources mapping="/css/**" location="/WEB-INF/views/css/" />
