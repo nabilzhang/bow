@@ -1,5 +1,7 @@
 package me.nabil.app.bow.controllers;
 
+import javax.servlet.http.HttpServletRequest;
+
 import me.nabil.app.bow.entity.User;
 import me.nabil.app.bow.service.UserService;
 import me.nabil.app.bow.template.BaseTemplate;
@@ -23,7 +25,7 @@ public class UserController extends BaseController {
 
 	@RequestMapping(value = "logon")
 	@ResponseBody
-	public BaseTemplate logon(User user) {
+	public BaseTemplate logon(User user, HttpServletRequest request) {
 		User ret = userService.checkLogin(user);
 		getLogger().info("user login:" + user);
 		if (ret == null) {
@@ -31,6 +33,7 @@ public class UserController extends BaseController {
 		} else if (!user.getPassword().equals(ret.getPassword())) {
 			return new BaseTemplate(Boolean.FALSE, "用户名或密码错误", null);
 		} else {
+			request.getSession().setAttribute("user", user);
 			return new BaseTemplate(Boolean.TRUE, null, null);
 		}
 	}
