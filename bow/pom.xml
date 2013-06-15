@@ -12,7 +12,7 @@
 		<pro.outerDirectory>src/main/webapp</pro.outerDirectory>
 	</properties>
 
-	<repositories>
+	<repositories>	
 		<repository>
 			<id>JBoss repository</id>
 			<url>http://repository.jboss.org/nexus/content/groups/public/</url>

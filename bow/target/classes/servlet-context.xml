@@ -26,7 +26,7 @@
 		<mvc:interceptor>
 			<mvc:mapping path="/home/**"  />
 			<mvc:mapping path="/user/**"  />
-			
+			<mvc:mapping path="/system/**"  />
 			<bean class="me.nabil.app.bow.interceptors.AuthInterceptor" />
 		</mvc:interceptor>
 	</mvc:interceptors>
@@ -36,4 +36,5 @@
 	<mvc:resources mapping="/css/**" location="/WEB-INF/views/css/" />
 	<mvc:resources mapping="/js/**" location="/WEB-INF/views/js/" />
 	<mvc:resources mapping="/lib/**" location="/WEB-INF/views/lib/" />
+	<mvc:resources mapping="/app/**" location="/WEB-INF/views/js/app/" />
 </beans>

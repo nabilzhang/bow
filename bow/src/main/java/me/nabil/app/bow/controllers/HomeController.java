@@ -10,6 +10,6 @@ public class HomeController extends BaseController{
 	@RequestMapping(value="/")
 	public String home(){
 		getLogger().info("HomeController: Passing through...");
-        return "/WEB-INF/views/jsp/index.jsp";
+        return "/WEB-INF/views/jsp/index.html";
 	}
 }
