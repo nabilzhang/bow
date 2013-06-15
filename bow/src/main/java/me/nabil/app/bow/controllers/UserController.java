@@ -20,7 +20,7 @@ public class UserController extends BaseController {
 
 	@RequestMapping(value = "login")
 	public String login() {
-		return "/WEB-INF/views/jsp/ajaxlogin.jsp";
+		return "/WEB-INF/views/jsp/login.jsp";
 	}
 
 	@RequestMapping(value = "logon")
