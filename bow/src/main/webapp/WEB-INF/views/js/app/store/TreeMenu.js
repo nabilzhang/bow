@@ -7,7 +7,6 @@ Ext.define('Bow.store.TreeMenu', {
 		user : "",
 		status : "",
 		children : [ {
-			id : "x",
 			text : "采购管理",
 			children : [ {
 				text : "采购订单列表",
@@ -88,12 +87,18 @@ Ext.define('Bow.store.TreeMenu', {
 		}, {
 			text : "用户权限管理",
 			children : [ {
-				text : "销售订单列表",
-				leaf : true
+				text : "所有用户",
+				leaf : true,
+				id: "user-all"
 			}, {
-				text : "新建销售订单",
-				leaf : true
+				text : "用户组管理",
+				leaf : true,
+				id : "user-group"
+			}, {
+				text : "系统日志",
+				leaf : true,
+				id : "user-systemlog"
 			} ]
-		} ]
+		} ],
 	}
 });
